@@ -55,26 +55,32 @@ void error(void) {
   analogWrite(R, 100);
   analogWrite(G, 0);
   analogWrite(B, 0);
+  analogWrite(motorPin, 50);
   for (int i = 0; i < 300; i++) {
   digitalWrite(buzzerPin, LOW);                       
   delay(1);                     
   digitalWrite(buzzerPin, HIGH);  
   delay(1); 
   }
+  analogWrite(motorPin, 0);
   delay(300);
+  analogWrite(motorPin, 50);
   for (int i = 0; i < 300; i++) {
   digitalWrite(buzzerPin, LOW);                       
   delay(1);                     
   digitalWrite(buzzerPin, HIGH);  
   delay(1); 
   }
+  analogWrite(motorPin, 0);
   delay(300);
+  analogWrite(motorPin, 50);
   for (int i = 0; i < 300; i++) {
   digitalWrite(buzzerPin, LOW);                       
   delay(1);                     
   digitalWrite(buzzerPin, HIGH);
   delay(1);  
   }
+  analogWrite(motorPin, 0);
   delay(1000);
   analogWrite(R, 100); 
 }
@@ -83,6 +89,7 @@ void busy(void) {
   analogWrite(R, 0);
   analogWrite(B, 0);
   analogWrite(G, 0);
+  analogWrite(motorPin, 50);
   for (int i=0; i <= 100; i++){
   digitalWrite(buzzerPin, LOW);  
   analogWrite(B, random(0, 100));                     
@@ -91,6 +98,7 @@ void busy(void) {
   delay(random(MIN, MAX)); 
   }
   analogWrite(B, 0);
+  analogWrite(motorPin, 0);
 }
 
 int next_state(void) {
